@@ -22,7 +22,10 @@ namespace employwage
             //UC2 UC3 UC%
            const int Is_FullTime = 1;
           const  int Is_PartTime = 2;
-            int WorkingDaysPerMonth = 20;
+            int TotalWorkingDaysPerMonth = 20;
+            int TotalHrsPerMonth = 100;
+            int totalhrs = 0;
+            int totaldays = 0;
             int RatePerHour = 20;
             int empHrs;
             int TotalWagePerMonth=0;
@@ -39,8 +42,29 @@ namespace employwage
              {
                  empHrs = 0;
              }*/
-            for (int i = 0; i < WorkingDaysPerMonth; i++)
+            /* for (int i = 0; i < WorkingDaysPerMonth; i++)
+             {
+                 int empcheck = random.Next(0, 3);
+                 switch (empcheck)
+                 {
+                     case Is_FullTime:
+                         empHrs = 8;
+                         break;
+                     case Is_PartTime:
+                         empHrs = 4;
+                         break;
+                     default:
+                         empHrs = 0;
+                         break;
+
+                 }
+                 int empWage = empHrs * RatePerHour;
+                 TotalWagePerMonth += empWage;
+                 Console.WriteLine("Employee wage is {0}", empWage);
+             }*/
+            while (totalhrs <= TotalHrsPerMonth && totaldays < TotalWorkingDaysPerMonth)
             {
+                totaldays++;
                 int empcheck = random.Next(0, 3);
                 switch (empcheck)
                 {
@@ -55,11 +79,14 @@ namespace employwage
                         break;
 
                 }
-                int empWage = empHrs * RatePerHour;
-                TotalWagePerMonth += empWage;
-                Console.WriteLine("Employee wage is {0}", empWage);
+                totalhrs+=empHrs;
+                
+              //  int empWage = empHrs * RatePerHour;
+               // TotalWagePerMonth += empWage;
+              //  Console.WriteLine("Employee wage is {0}", empWage);
             }
-            Console.WriteLine("Total wage per month is {0}", TotalWagePerMonth);
+            int empWage = totalhrs * RatePerHour;
+            Console.WriteLine("Total wage per month is {0}", empWage);
             
         }
     }
