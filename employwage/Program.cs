@@ -7,17 +7,21 @@ namespace employwage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Employee Wage Computation Program");
+            int Is_FullTime = 1;
+            int RatePerHour = 20;
+            int empHrs;
             Random random = new Random();
-            int attendence = random.Next(0, 2);
-            if (attendence == 1)
+            int empcheck = random.Next(0, 2);
+            if (empcheck == Is_FullTime)
             {
-                Console.WriteLine("Employee is present");
+                empHrs = 8;
             }
             else
             {
-                Console.WriteLine("Employee is absent");
+                empHrs = 0;
             }
+            int empWage = empHrs * RatePerHour;
+            Console.WriteLine("Employee wage is {0}", empWage);
         }
     }
 }
