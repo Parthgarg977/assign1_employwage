@@ -19,12 +19,14 @@ namespace employwage
             {
                 Console.WriteLine("Employee is absent");
             }
-            //UC2 UC3
+            //UC2 UC3 UC%
            const int Is_FullTime = 1;
           const  int Is_PartTime = 2;
+            int WorkingDaysPerMonth = 20;
             int RatePerHour = 20;
             int empHrs;
-            int empcheck = random.Next(0, 3);
+            int TotalWagePerMonth=0;
+
             /* if (empcheck == Is_FullTime)
              {
                  empHrs = 8;
@@ -37,21 +39,27 @@ namespace employwage
              {
                  empHrs = 0;
              }*/
-            switch (empcheck)
+            for (int i = 0; i < WorkingDaysPerMonth; i++)
             {
-                case Is_FullTime:
-                    empHrs = 8;
-                    break;
+                int empcheck = random.Next(0, 3);
+                switch (empcheck)
+                {
+                    case Is_FullTime:
+                        empHrs = 8;
+                        break;
                     case Is_PartTime:
-                    empHrs = 4;
-                    break;
-                default:
-                    empHrs = 0;
-                    break;
+                        empHrs = 4;
+                        break;
+                    default:
+                        empHrs = 0;
+                        break;
 
+                }
+                int empWage = empHrs * RatePerHour;
+                TotalWagePerMonth += empWage;
+                Console.WriteLine("Employee wage is {0}", empWage);
             }
-            int empWage = empHrs * RatePerHour;
-            Console.WriteLine("Employee wage is {0}", empWage);
+            Console.WriteLine("Total wage per month is {0}", TotalWagePerMonth);
             
         }
     }
