@@ -5,7 +5,7 @@ namespace employwage
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void computeEmpWage()
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program");
             //UC1
@@ -20,15 +20,15 @@ namespace employwage
                 Console.WriteLine("Employee is absent");
             }
             //UC2 UC3 UC%
-           const int Is_FullTime = 1;
-          const  int Is_PartTime = 2;
+            const int Is_FullTime = 1;
+            const int Is_PartTime = 2;
             int TotalWorkingDaysPerMonth = 20;
             int TotalHrsPerMonth = 100;
             int totalhrs = 0;
             int totaldays = 0;
             int RatePerHour = 20;
             int empHrs;
-            int TotalWagePerMonth=0;
+            int TotalWagePerMonth = 0;
 
             /* if (empcheck == Is_FullTime)
              {
@@ -79,15 +79,20 @@ namespace employwage
                         break;
 
                 }
-                totalhrs+=empHrs;
-                
-              //  int empWage = empHrs * RatePerHour;
-               // TotalWagePerMonth += empWage;
-              //  Console.WriteLine("Employee wage is {0}", empWage);
+                totalhrs += empHrs;
+
+                //  int empWage = empHrs * RatePerHour;
+                // TotalWagePerMonth += empWage;
+                //  Console.WriteLine("Employee wage is {0}", empWage);
             }
             int empWage = totalhrs * RatePerHour;
             Console.WriteLine("Total wage per month is {0}", empWage);
-            
+
+
+        }
+        static void Main(string[] args)
+        {
+            computeEmpWage();
         }
     }
 }
